@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Generador de Hoja de Vida</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="form-panel">
+      <h1>Generador de Hoja de Vida</h1>
+
+      <!-- Datos personales -->
+      <section class="section">
+        <h2>Datos Personales</h2>
+        <div class="photo-upload">
+          <img id="preview-foto" src="https://via.placeholder.com/120x120?text=Foto" alt="Foto" />
+          <label for="foto" class="btn-secondary">Subir Foto</label>
+          <input type="file" id="foto" accept="image/*" hidden />
+        </div>
+        <div class="fields">
+          <input type="text" id="nombre" placeholder="Nombre completo" />
+          <input type="text" id="cargo" placeholder="Cargo / Profesión" />
+          <input type="email" id="email" placeholder="Correo electrónico" />
+          <input type="tel" id="telefono" placeholder="Teléfono" />
+          <input type="text" id="ciudad" placeholder="Ciudad, País" />
+          <input type="url" id="linkedin" placeholder="LinkedIn (opcional)" />
+        </div>
+        <div class="fields">
+          <textarea id="perfil" placeholder="Perfil profesional / resumen" rows="3"></textarea>
+        </div>
+      </section>
+
+      <!-- Experiencia -->
+      <section class="section">
+        <h2>Experiencia Laboral</h2>
+        <div id="lista-experiencia"></div>
+        <button class="btn-add" onclick="agregarExperiencia()">+ Agregar Experiencia</button>
+      </section>
+
+      <!-- Educación -->
+      <section class="section">
+        <h2>Educación</h2>
+        <div id="lista-educacion"></div>
+        <button class="btn-add" onclick="agregarEducacion()">+ Agregar Educación</button>
+      </section>
+
+      <!-- Habilidades -->
+      <section class="section">
+        <h2>Habilidades</h2>
+        <div class="fields">
+          <input type="text" id="habilidades" placeholder="Ej: JavaScript, Trabajo en equipo, Inglés B2 (separadas por coma)" />
+        </div>
+      </section>
+
+      <!-- Botones -->
+      <div class="actions">
+        <button class="btn-primary" onclick="generarCV()">Generar Hoja de Vida</button>
+        <button class="btn-secondary" onclick="imprimirCV()">Imprimir / Guardar PDF</button>
+      </div>
+    </div>
+
+    <!-- Preview -->
+    <div class="preview-panel">
+      <div id="cv-output" class="cv-paper">
+        <p class="placeholder-msg">Completa el formulario y presiona "Generar Hoja de Vida"</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
